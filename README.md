@@ -53,3 +53,10 @@ Subscription-based (SaaS) businesses require granular tracking of revenue stream
 │   └── executive_overview.png
 ├── LICENSE                      <- MIT License terms
 └── README.md                    <- Analytical documentation & case study
+
+📬 Contact
+Author: Oleksandr Hordashevskyi
+
+LinkedIn: www.linkedin.com/in/oleksandr-hordashevskyi
+
+Email: o.hordashevskyi@gmail.com
