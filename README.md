@@ -1,6 +1,6 @@
 # 💳 SaaS Financial Performance & Cohort Retention Analytics
 
-[![Tableau Public Badge](https://img.shields.io/badge/Tableau_Public-Interactive_Dashboard-orange?style=flat&logo=tableau)](https://public.tableau.com/app/profile/oleksandr.hordashevskyi/vizzes)
+[![Tableau Public Badge](https://img.shields.io/badge/Tableau_Public-Interactive_Dashboard-orange?style=flat&logo=tableau)](https://public.tableau.com/views/Book14_2_17866371387550/Dashboard2?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 An end-to-end financial and subscription analytics project modeling Monthly Recurring Revenue (MRR), New MRR acquisition dynamics, and cohort revenue retention using Tableau Desktop.
@@ -20,9 +20,11 @@ Subscription-based (SaaS) businesses require granular tracking of revenue stream
 
 ## 🖼 Dashboard Preview
 
-![SaaS Revenue Dashboard Preview](images/dashboard_preview.png)
+![SaaS Executive Overview](images/executive_overview.png)
 
-🔗 **Interactive Live Version:** [Open Dashboard on Tableau Public](https://public.tableau.com/app/profile/oleksandr.hordashevskyi/vizzes)
+![SaaS Cohort Retention Matrix](images/cohort_retention.png)
+
+🔗 **Interactive Live Version:** [Open Dashboard on Tableau Public](https://public.tableau.com/views/Book14_2_17866371387550/Dashboard2?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
 
 ---
 
@@ -47,6 +49,7 @@ Subscription-based (SaaS) businesses require granular tracking of revenue stream
 ```text
 ├── dashboards/                  <- Tableau Packaged Workbook (.twbx)
 ├── images/                      <- Dashboard screenshots & visual assets
-│   └── dashboard_preview.png
+│   ├── cohort_retention.png
+│   └── executive_overview.png
 ├── LICENSE                      <- MIT License terms
 └── README.md                    <- Analytical documentation & case study
