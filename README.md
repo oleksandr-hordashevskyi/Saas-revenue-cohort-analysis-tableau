@@ -1,81 +1,52 @@
-# 📊 SaaS Financial Performance & Cohort Retention Analytics
+# 💳 SaaS Financial Performance & Cohort Retention Analytics
 
-An interactive, end-to-end Tableau Business Intelligence project designed to evaluate recurring revenue dynamics, regional performance, pricing metrics, and long-term customer retention for a multi-product SaaS company.
+[![Tableau Public Badge](https://img.shields.io/badge/Tableau_Public-Interactive_Dashboard-orange?style=flat&logo=tableau)](https://public.tableau.com/app/profile/oleksandr.hordashevskyi/vizzes)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-🔗 **Interactive Tableau Dashboard:** [View on Tableau Public](https://public.tableau.com/app/profile/oleksandr.hordashevskyi/viz/Book14_2_17866371387550/Dashboard2)
-
----
-
-## 📌 Business Overview & Problem Statement
-SaaS leadership and product teams required visibility into core monetization metrics to evaluate business growth, regional demand, and subscription health across software offerings.
-
-### Key Objectives:
-* **Track Revenue Trajectory:** Assess Monthly Recurring Revenue (MRR) expansion, new customer contributions, and MoM growth velocity.
-* **Segment Analysis:** Break down monetization across software products and geographical regions (APAC, EMEA, USA).
-* **Unit Economics Monitoring:** Track Average Revenue Per Paid User (ARPPU) vs. Paid User scale.
-* **Customer Retention Analysis:** Quantify retention decay and expansion patterns using a monthly cohort revenue matrix.
+An end-to-end financial and subscription analytics project modeling Monthly Recurring Revenue (MRR), New MRR acquisition dynamics, and cohort revenue retention using Tableau Desktop.
 
 ---
 
-## 🖼️ Dashboard Architecture & Previews
+## 📌 Business Context & Objective
+Subscription-based (SaaS) businesses require granular tracking of revenue streams and cohort behavior to optimize customer acquisition costs and predict Lifetime Value (LTV).
 
-### 1. Executive Overview & Regional Breakdown
-Focuses on operational sales health, regional distribution, and subscription unit economics.
-
-![Executive Overview](images/executive_overview.png)
-
-* **Key Metrics:** Paid Users Count, Total Revenue by Region, ARPPU Dynamics.
-* **Key Dimensions:** Software Name (`Main App`, `Customer Success`, `Marketing Automation`, `Publishing`), Geographic Regions (`APAC`, `EMEA`, `USA`).
-
----
-
-### 2. Revenue Growth & Cohort Retention
-Deep-dives into growth consistency, acquisition momentum (New MRR), and lifecycle retention.
-
-![Cohort Retention](images/cohort_retention.png)
-
-* **Key Metrics:** New MRR, MoM % Revenue Difference, Cohort Index (0–11 months).
-* **Visual Mechanics:** Dynamic gradient shading based on % Revenue Retained relative to Cohort Month 0.
+**Key Analytical Objectives:**
+- Track monthly recurring revenue growth rates and decompose revenue streams.
+- Isolate and calculate **New MRR** via first-payment month cohort filtering.
+- Construct a dynamic **Cohort Revenue Matrix** to monitor long-term customer retention and monetization decay.
+- Provide executive-level filtering across subscription tiers, acquisition channels, and time horizons.
 
 ---
 
-## 💡 Key Business Insights
+## 🖼 Dashboard Preview
 
-1. **Regional Performance Discrepancy:**
-   * **USA** represents the primary revenue engine ($643K+), driven heavily by *Marketing Automation* and *Main App*.
-   * **APAC** exhibits strong traction ($448K+), with *Customer Success* being the dominant product line.
-   * **EMEA** lags in overall volume ($240K+), indicating opportunities for revised go-to-market strategies.
+![SaaS Revenue Dashboard Preview](images/dashboard_preview.png)
 
-2. **Unit Economics & ARPPU Trends:**
-   * Paid user volume expanded rapidly from ~750 to over 3,600+ users.
-   * Initial ARPPU stabilized around ~$38–$40 following early promotional pricing dilution, showing predictable average spend per subscriber.
-
-3. **Growth Velocity & Seasonality:**
-   * Peak MoM expansion occurred during Q3 (reaching +38.48% MoM growth in August).
-   * Contractions observed in December (-12.65%) and late Spring highlight subscription churn points requiring targeted retention campaigns.
-
-4. **Cohort Retention Patterns:**
-   * Cohorts demonstrate initial expansion in Month 1 (up to 149% of base revenue), followed by a steady plateau, proving strong product stickiness before normal subscription lifecycle churn.
+🔗 **Interactive Live Version:** [Open Dashboard on Tableau Public](https://public.tableau.com/app/profile/oleksandr.hordashevskyi/vizzes)
 
 ---
 
-## 🛠️ Technical Stack & Tableau Skills Applied
-
-* **BI Tool:** Tableau Public / Desktop
-* **Advanced Calculations:**
-  * **LOD Expressions:** `{FIXED [User ID] : MIN([Payment Date])}` for cohort assignment and New MRR identification.
-  * **Table Calculations:** `LOOKUP()`, `% Difference in Total Revenue` for dynamic MoM growth rates.
-  * **Aggregations & Metrics:** Dynamic ARPPU (`SUM(Revenue) / COUNTD(User ID)`), Dual-Axis synchronizations.
-* **Data Visualizations:** Clustered Bar Charts, Multi-Line Series, Dual-Axis combo charts, Matrix Heatmaps with dynamic gradient coloring.
-* **Interactive UI/UX:** Cross-sheet global filtering (Date Range, Region, Product), optimized container layouts, and decluttered dashboard headers.
+## 🛠 Technical Implementation & Key Skills
+- **BI Platform:** Tableau Desktop / Tableau Public
+- **Level of Detail (LOD) Calculations:** Engineered `{FIXED [User ID] : MIN([Payment Month])}` expressions to isolate initial acquisition periods and calculate true New MRR.
+- **Table Calculations:** Configured dynamic cohort decay formulas and period-over-period revenue Growth Rates.
+- **Visual Design & Heatmaps:** Applied customized gradient scales with baseline normalization for intuitive cohort matrix readability.
+- **Data Modeling:** Structured transactional billing logs into a cohort-ready reporting layer.
 
 ---
 
-## 📂 Project Structure
+## 🔍 Key Insights & Findings
+1. **New MRR Expansion:** Acquisition revenue showed strong compounding growth driven by initial promotional cycles.
+2. **Cohort Decay Curve:** The sharpest retention drop occurs in Month 2–3 post-acquisition, stabilizing into predictable baseline ARR by Month 6.
+3. **High-Yield Cohorts:** Specific seasonal cohorts demonstrated higher average revenue per user (ARPU), highlighting target acquisition windows for marketing.
+
+---
+
+## 📂 Repository Structure
+
 ```text
-├── datasets/
-│   └── saas_revenue_data.csv       # Source transaction data
-├── images/
-│   ├── executive_overview.png      # High-res screenshot of Dashboard 1
-│   └── cohort_retention.png        # High-res screenshot of Dashboard 2
-└── README.md                       # Documentation and business summary
+├── dashboards/                  <- Tableau Packaged Workbook (.twbx)
+├── images/                      <- Dashboard screenshots & visual assets
+│   └── dashboard_preview.png
+├── LICENSE                      <- MIT License terms
+└── README.md                    <- Analytical documentation & case study
